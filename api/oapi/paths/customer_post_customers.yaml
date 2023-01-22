@@ -1,0 +1,19 @@
+post:
+  tags:
+    - customer
+  summary: カスタマー登録
+  description: カスタマー登録
+  operationId: customerPostCustomers
+  responses:
+    201:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/api/customer_post_customers.yaml#/CustomerPostCustomersResponse"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../components/schemas/api/customer_post_customers.yaml#/CustomerPostCustomersRequestBody"
+

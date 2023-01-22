@@ -1,0 +1,51 @@
+openapi: 3.0.2
+info:
+  title: sample-interface
+  version: "1.0"
+  description: "sample API"
+  contact:
+    name: annoymous
+servers:
+  - url: "http://localhost:1323/v1/"
+    description: localhost
+
+paths:
+  /sign_up:
+    $ref: "./paths/customer_post_customers.yaml"
+
+  /sign_in:
+    $ref: "./paths/customer_post_customers_sign_in.yaml"
+
+  /sight_categories:
+    $ref: "./paths/customer_get_sight_categories.yaml"
+
+  /sight_genres:
+    $ref: "./paths/customer_get_sight_genres.yaml"
+
+  /kanri/sign_up:
+    $ref: "./paths/operator_post_operators.yaml"
+
+  /kanri/sign_in:
+    $ref: "./paths/operator_post_operators_sign_in.yaml"
+
+  /kanri/sight_categories:
+    $ref: "./paths/operator_get_sight_categories.yaml"
+
+  /kanri/sight_genres:
+    $ref: "./paths/operator_get_sight_genres.yaml"
+
+
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: access token for API(customer or operator)
+  schemas:
+    $ref: "./components/schemas/index.yaml"
+
+
+externalDocs:
+  description: "Swagger公式"
+  url: http://swagger.io

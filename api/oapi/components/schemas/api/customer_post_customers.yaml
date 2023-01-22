@@ -1,0 +1,91 @@
+CustomerPostCustomersResponse:
+  type: object
+  required:
+    - id
+  properties:
+    id:
+      type: integer
+      format: uint64
+      description: customer new ID
+      example: 100
+
+CustomerPostCustomersRequestBody:
+  type: object
+  required:
+    - email
+    - password
+    - password_confirmation
+    - name
+    - display_name
+    - birthday
+    - gender
+    - phone_number
+    - generation
+    - introduction
+    - allow_plans_displayed
+  properties:
+    email:
+      type: string
+      description: メールアドレス
+      example: customer@gmail.com
+    password:
+      type: string
+      description: パスワード
+      example: passwd
+    password_confirmation:
+      type: string
+      description: パスワード確認用
+      example: passwd
+    name:
+      type: string
+      description: ユーザ名
+      example: customername
+    display_name:
+      type: string
+      description: 表示用ユーザー名。
+      example: customerあちき
+    birthday:
+      type: string
+      format: date
+      description: 誕生日
+      default: "2006-01-02"
+    gender:
+      type: string
+      description: 性別
+      enum:
+        - male
+        - female
+        - unknown
+      example: male
+    phone_number:
+      type: string
+      description: 電話番号
+      example: "09012345678"
+    generation:
+      type: string
+      description: 世代
+      enum:
+        - s10
+        - s20
+        - s30
+        - s40
+        - s50
+        - s60
+        - s70
+        - s80
+        - s90
+        - Unknown
+      example: s20
+    introduction:
+      type: string
+      description: 自己紹介
+      example: "旅行が好きです."
+    image_url:
+      type: string
+      format: base64
+      description: プロフィール画像
+      example: ""
+    allow_plans_displayed:
+      type: boolean
+      description: 自分のプラン公開是非
+      example: false

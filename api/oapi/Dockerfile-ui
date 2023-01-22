@@ -1,0 +1,18 @@
+FROM node:19-alpine3.17
+
+ENV APP_HOME /app
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+
+RUN apk update
+RUN apk add --no-cache openjdk8
+
+COPY . .
+
+RUN npm install -g swagger-nodegen-cli
+RUN sc generate -i ./build/oapi.yaml -l nodejs-server -o ./ && sleep 5
+
+RUN npm install
+
+EXPOSE 8080
+CMD ["npm", "start"]

@@ -1,0 +1,43 @@
+Operator:
+  type: object
+  properties:
+    email:
+      type: string
+      description: メールアドレス
+      example: operator@gmail.com
+    name:
+      type: string
+      description: ユーザ名
+      example: operatorname
+    display_name:
+      type: string
+      description: 表示用ユーザー名。
+      example: operatorあちき
+    level:
+      type: string
+      description: 権限レベル
+      enum:
+        - normal
+        - unknown
+      example: normal
+    belong:
+      type: string
+      description: 所属
+      enum:
+        - internal
+        - external
+        - unknown
+    is_god:
+      type: boolean
+      description: 神権限
+      example: false
+    last_accessed_at:
+      type: string
+      format: date-time
+      description: 最終アクセス日
+      default: "2006-01-02T09:00:00Z"
+    last_logged_in_at:
+      type: string
+      format: date-time
+      description: 最終ログイン日
+      default: "2006-01-02T09:00:00Z"

@@ -1,0 +1,9 @@
+package: openapi_service
+generate:
+  echo-server: true
+  client: false
+  models: false
+  embedded-spec: false
+output: ./internal/api/infrastructure/api/openapi_service/server.gen.go
+output-options:
+  skip-prune: true

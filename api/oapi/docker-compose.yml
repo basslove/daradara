@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  api-swagger-editor:
+    container_name: "golang-api-swagger-editor-server"
+    build:
+      context: ./
+      dockerfile: Dockerfile-editor
+    ports:
+      - "8188:8080"
+
+  api-swagger-ui:
+    container_name: "golang-api-swagger-ui-server"
+    build:
+      context: ./
+      dockerfile: Dockerfile-ui
+    ports:
+      - "8189:8080"

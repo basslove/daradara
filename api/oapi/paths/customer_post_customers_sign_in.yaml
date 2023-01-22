@@ -1,0 +1,18 @@
+post:
+  tags:
+    - customer
+  summary: カスタマーサインイン
+  description: カスタマーサインイン
+  operationId: customerPostCustomersSignIn
+  responses:
+    201:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/api/customer_post_customers_sign_in.yaml#/CustomerPostCustomersSignInResponse"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../components/schemas/api/customer_post_customers_sign_in.yaml#/CustomerPostCustomersSignInRequestBody"

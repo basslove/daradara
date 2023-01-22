@@ -1,0 +1,23 @@
+SightGenre:
+  type: object
+  required:
+    - id
+    - name
+    - image_url
+    - sight_category
+  properties:
+    id:
+      type: integer
+      format: uint64
+      description: id(PK)
+      example: 1
+    name:
+      type: string
+      description: 名前
+      example: "美術館"
+    image_url:
+      type: string
+      description: image url
+      example: "https://s3-ap-northeast-1.amazonaws.com/aaaa.jp/images/genre/%E3%82%A2%E3%82%A48A0.jpg"
+    sight_category:
+      $ref: "../sight_categories/sight_category.yaml#/SightCategory"

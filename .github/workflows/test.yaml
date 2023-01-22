@@ -1,0 +1,5 @@
+name: test CI
+
+#on: push
+#
+#jobs:

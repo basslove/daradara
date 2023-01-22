@@ -1,0 +1,9 @@
+OperatorGetSightCategoriesResponse:
+  type: object
+  required:
+    - sight_categories
+  properties:
+    sight_categories:
+      type: array
+      items:
+        $ref: '../sight_categories/sight_category.yaml#/SightCategory'
