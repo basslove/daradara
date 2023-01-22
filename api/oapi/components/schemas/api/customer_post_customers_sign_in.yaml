@@ -1,0 +1,24 @@
+CustomerPostCustomersSignInResponse:
+  type: object
+  properties:
+    token:
+      type: string
+      description: token
+      example: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    customer:
+      $ref: '../customers/customer.yaml#/Customer'
+
+CustomerPostCustomersSignInRequestBody:
+  type: object
+  required:
+    - email
+    - password
+  properties:
+    email:
+      type: string
+      description: メールアドレス
+      example: customer@gmail.com
+    password:
+      type: string
+      description: パスワード
+      example: passwd

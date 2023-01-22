@@ -10,6 +10,31 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+main
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# dir ignore
+logs/*
+!/logs/.keep
+build/database/postgresql/developdb/data/*
+!/build/database/postgresql/developdb/data/.keep
+build/database/postgresql/testdb/data/*
+!/build/database/postgresql/testdb/data/.keep
+
+# vi
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# extra(free)
+.env
+.idea
+.DS_Store
+*~
+*.elc
+auto-save-list
+api/oapi/build/oapi.yaml

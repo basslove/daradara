@@ -1,0 +1,62 @@
+OperatorPostOperatorsResponse:
+  type: object
+  required:
+    - id
+  properties:
+    id:
+      type: integer
+      format: uint64
+      description: operator new ID
+      example: 100
+
+OperatorPostOperatorsRequestBody:
+  type: object
+  required:
+    - email
+    - password
+    - password_confirmation
+    - name
+    - display_name
+    - level
+    - belong
+    - is_god
+  properties:
+    email:
+      type: string
+      description: メールアドレス
+      example: operator@gmail.com
+    password:
+      type: string
+      description: パスワード
+      example: passwd
+    password_confirmation:
+      type: string
+      description: パスワード確認用
+      example: passwd
+    name:
+      type: string
+      description: ユーザ名
+      example: operatorname
+    display_name:
+      type: string
+      description: 表示用ユーザー名。
+      example: operatorあちき
+    level:
+      type: string
+      description: 権限レベル
+      enum:
+        - normal
+        - unknown
+      example: normal
+    belong:
+      type: string
+      description: 所属
+      enum:
+        - internal
+        - external
+        - unknown
+      example: internal
+    is_god:
+      type: boolean
+      description: 神権限有無
+      example: false

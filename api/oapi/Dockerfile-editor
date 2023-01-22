@@ -1,0 +1,8 @@
+FROM swaggerapi/swagger-editor
+
+ENV SWAGGER_FILE /tmp/oapi.yaml
+
+COPY build/oapi.yaml /tmp/oapi.yaml
+COPY ./components/ /tmp/components/
+
+EXPOSE 8080

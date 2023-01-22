@@ -1,0 +1,34 @@
+get:
+  tags:
+    - sight_category
+  summary: 観光場所カテゴリ for operator
+  description: 観光場所カテゴリ一覧取得  for operator
+  operationId: operatorGetSightCategories
+  security:
+    - Bearer: [ ]
+  parameters:
+    - name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        description: 名前
+    - name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int64
+    - name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int64
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/api/operator_get_sight_categories.yaml#/OperatorGetSightCategoriesResponse"

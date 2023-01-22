@@ -1,0 +1,47 @@
+# api schema ------------------------------------------------------------------------------------------ #
+CustomerPostCustomersResponse:
+  $ref: "./api/customer_post_customers.yaml#/CustomerPostCustomersResponse"
+CustomerPostCustomersRequestBody:
+  $ref: "./api/customer_post_customers.yaml#/CustomerPostCustomersRequestBody"
+
+CustomerPostCustomersSignInResponse:
+  $ref: "./api/customer_post_customers_sign_in.yaml#/CustomerPostCustomersSignInResponse"
+CustomerPostCustomersSignInRequestBody:
+  $ref: "./api/customer_post_customers_sign_in.yaml#/CustomerPostCustomersSignInRequestBody"
+
+CustomerGetSightCategoriesResponse:
+  $ref: "./api/customer_get_sight_categories.yaml#/CustomerGetSightCategoriesResponse"
+
+CustomerGetSightGenresResponse:
+  $ref: "./api/customer_get_sight_genres.yaml#/CustomerGetSightGenresResponse"
+
+OperatorPostOperatorsResponse:
+  $ref: "./api/operator_post_operators.yaml#/OperatorPostOperatorsResponse"
+OperatorPostOperatorsRequestBody:
+  $ref: "./api/operator_post_operators.yaml#/OperatorPostOperatorsRequestBody"
+
+OperatorPostOperatorsSignInResponse:
+  $ref: "./api/operator_post_operators_sign_in.yaml#/OperatorPostOperatorsSignInResponse"
+OperatorPostOperatorsSignInRequestBody:
+  $ref: "./api/operator_post_operators_sign_in.yaml#/OperatorPostOperatorsSignInRequestBody"
+
+OperatorGetSightCategoriesResponse:
+  $ref: "./api/operator_get_sight_categories.yaml#/OperatorGetSightCategoriesResponse"
+
+OperatorGetSightGenresResponse:
+  $ref: "./api/operator_get_sight_genres.yaml#/OperatorGetSightGenresResponse"
+
+# ------------------------------------------------------------------------------------------------------- #
+
+# model schema ------------------------------------------------------------------------------------------ #
+Customer:
+  $ref: "./customers/customer.yaml#/Customer"
+
+Operator:
+  $ref: "./operators/operator.yaml#/Operator"
+
+SightCategory:
+  $ref: "./sight_categories/sight_category.yaml#/SightCategory"
+
+SightGenre:
+  $ref: "./sight_genres/sight_genre.yaml#/SightGenre"

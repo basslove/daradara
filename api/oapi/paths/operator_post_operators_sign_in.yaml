@@ -1,0 +1,18 @@
+post:
+  tags:
+    - operator
+  summary: オペレーターサインイン
+  description: オペレーターサインイン
+  operationId: operatorPostOperatorsSignIn
+  responses:
+    201:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/api/operator_post_operators_sign_in.yaml#/OperatorPostOperatorsSignInResponse"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../components/schemas/api/operator_post_operators_sign_in.yaml#/OperatorPostOperatorsSignInRequestBody"

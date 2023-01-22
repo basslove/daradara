@@ -1,0 +1,18 @@
+post:
+  tags:
+    - operator
+  summary: オペレーター登録
+  description: オペレーター登録
+  operationId: operatorPostOperators
+  responses:
+    201:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/api/operator_post_operators.yaml#/OperatorPostOperatorsResponse"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../components/schemas/api/operator_post_operators.yaml#/OperatorPostOperatorsRequestBody"

@@ -1,0 +1,63 @@
+Customer:
+  type: object
+  properties:
+    email:
+      type: string
+      description: メールアドレス
+      example: customer@gmail.com
+    name:
+      type: string
+      description: ユーザ名
+      example: customername
+    display_name:
+      type: string
+      description: 表示用ユーザー名。
+      example: customerあちき
+    birthday:
+      type: string
+      description: 誕生日
+      example: "2006-01-02"
+    gender:
+      type: string
+      description: 性別
+      enum:
+        - male
+        - female
+        - unknown
+      example: Male
+    phone_number:
+      type: string
+      description: 電話番号
+      example: "09012345678"
+    generation:
+      type: string
+      description: 世代
+      enum:
+        - s10
+        - s20
+        - s30
+        - s40
+        - s50
+        - s60
+        - s70
+        - s80
+        - s90
+        - Unknown
+    introduction:
+      type: string
+      description: 自己紹介
+      example: "旅行が好きです."
+    allow_plans_displayed:
+      type: boolean
+      description: 自分のプラン公開是非
+      example: false
+    last_accessed_at:
+      type: string
+      format: date-time
+      description: 最終アクセス日
+      default: "2006-01-02T09:00:00Z"
+    last_logged_in_at:
+      type: string
+      format: date-time
+      description: 最終ログイン日
+      default: "2006-01-02T09:00:00Z"

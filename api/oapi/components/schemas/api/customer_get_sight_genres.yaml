@@ -1,0 +1,9 @@
+CustomerGetSightGenresResponse:
+  type: object
+  required:
+    - sight_genres
+  properties:
+    sight_genres:
+      type: array
+      items:
+        $ref: '../sight_genres/sight_genre.yaml#/SightGenre'

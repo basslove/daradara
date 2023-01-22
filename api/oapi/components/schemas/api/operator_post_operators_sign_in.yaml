@@ -1,0 +1,24 @@
+OperatorPostOperatorsSignInResponse:
+  type: object
+  properties:
+    token:
+      type: string
+      description: token
+      example: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    operator:
+      $ref: "../operators/operator.yaml#/Operator"
+
+OperatorPostOperatorsSignInRequestBody:
+  type: object
+  required:
+    - email
+    - password
+  properties:
+    email:
+      type: string
+      description: メールアドレス
+      example: operator@gmail.com
+    password:
+      type: string
+      description: パスワード
+      example: passwd

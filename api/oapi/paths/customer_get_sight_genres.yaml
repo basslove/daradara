@@ -1,0 +1,41 @@
+get:
+  tags:
+    - sight_genre
+  summary: 観光ジャンル for customer
+  description: 観光ジャンル一覧取得 for customer
+  operationId: customerGetSightGenres
+  security:
+    - Bearer: [ ]
+  parameters:
+    - name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        description: ジャンル名
+    - name: sight_category_id
+      in: query
+      required: false
+      schema:
+        description: 観光場所ID
+        type: integer
+        format: int64
+    - name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int64
+    - name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int64
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/api/customer_get_sight_genres.yaml#/CustomerGetSightGenresResponse"

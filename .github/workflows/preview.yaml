@@ -1,0 +1,9 @@
+name: preview CI
+on:
+  push:
+    branches:
+      - preview
+    paths-ignore:
+      - '**.md'
+      - docs/*
+      - .gitignore
