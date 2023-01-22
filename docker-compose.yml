@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+#  app:
+#    build:
+#      context: .
+#      dockerfile: ./build/app/Dockerfile
+#      args:
+#        APP_NAME: app
+#      target: development
+#    container_name: go_dev_app
+#    tty: true
+#    stdin_open: true
+#    volumes:
+#      - ./:/app:cached
+#    ports:
+#      - 28081:8080
+
+  developdb:
+    image: ${DB_IMAGE}
+    container_name: "golang_develop_db"
+    tty: true
+    environment:
+      - POSTGRES_USER=${DB_PSQL_DATABASE_USER}
+      - POSTGRES_PASSWORD=${DB_PSQL_DATABASE_PASS}
+      - POSTGRES_DB=${DB_PSQL_DATABASE_NAME}
+      - POSTGRES_INITDB_ARGS=${DB_PSQL_INITDB_ARGS}
+      - PGDATA=${DB_PSQL_PGDATA}
+      - TZ=${DB_PSQL_TIME_ZONE}
+    volumes:
+      - ./build/database/postgresql/developdb/data:/var/lib/postgresql/data:cached
+      # - ./build/database/postgresql/init:/docker-entrypoint-initdb.d
+    ports:
+      - ${DB_PSQL_PORT}:5432
+    restart: on-failure
+
+  testdb:
+    image: ${DB_IMAGE}
+    container_name: "golang_test_db"
+    environment:
+      - POSTGRES_USER=${TESTDB_PSQL_DATABASE_USER}
+      - POSTGRES_PASSWORD=${TESTDB_PSQL_DATABASE_PASS}
+      - POSTGRES_DB=${TESTDB_PSQL_DATABASE_NAME}
+      - POSTGRES_INITDB_ARGS=${TESTDB_PSQL_INITDB_ARGS}
+      - PGDATA=${TESTDB_PSQL_PGDATA}
+      - TZ=${TESTDB_PSQL_TIME_ZONE}
+    volumes:
+      - ./build/database/postgresql/testdb/data:/var/lib/postgresql/data:cached
+      # - ./build/database/postgresql/init:/docker-entrypoint-initdb.d
+    ports:
+      - ${TESTDB_PSQL_PORT}:5432
+    restart: on-failure

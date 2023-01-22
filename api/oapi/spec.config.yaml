@@ -1,0 +1,15 @@
+package: openapi_service
+generate:
+    models: false
+    embedded-spec: true
+#generate:
+#  echo-server: false
+#  client: false
+#  models: false
+#  embedded-spec: true
+#import-mapping:
+#  ./components/schemas/interfaces/sight_categories.yaml: github.com/basslove/daradara/api/oapi/components
+#  ./components/schemas/sight_categories/sight_category.yaml: github.com/basslove/daradara/api/oapi/components
+#output: internal/api/infrastructure/api/openapi_service/spec.gen.go
+#output-options:
+#  skip-prune: true
